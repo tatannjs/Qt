@@ -19,5 +19,5 @@ Operation.o Date.o: %.o: %.cpp %.h
 	$(CC) $<
 
 clean:
-	rm testOperation testDate *.o
+	del *.o *.exe
 
