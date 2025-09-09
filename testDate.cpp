@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
    cout << "Format long : " << chaine2.c_str() << endl;
 
    int nbJour = dateDuJour.nbJours(dateDeux);
-   cout << "Nombre de jour d'ecart" << nbJour << endl;
+   cout << "Nombre de jour d'ecart : " << nbJour << endl;
 
    return 0;
 }

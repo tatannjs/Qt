@@ -10,31 +10,33 @@ using namespace std;
 
 Date::Date()
 {
-    cout << "Appel du constructeur de Date..." << endl;
+    cout << "Appel du constructeur de Date par default" << endl;
     tps = time(NULL);
 }
 
 Date::Date(int j, int m, int a)
 {
-    cout << "Appel du constructeur de Date..." << endl;
+    cout << "Appel du constructeur de Date par parametre" << endl;
     tps = time(NULL);
-    struct tm *timeInfo = localtime(&tps);
-    timeInfo->tm_mday = j;
-    timeInfo->tm_mon = m - 1;
-    timeInfo->tm_year = a - 1900;
-    timeInfo->tm_hour = 0;
-    timeInfo->tm_min = 0;
-    timeInfo->tm_min = 0;
+    struct tm timeInfo;
+    localtime_s(&timeInfo, &tps);
+    timeInfo.tm_mday = j;
+    timeInfo.tm_mon = m - 1;
+    timeInfo.tm_year = a - 1900;
+    timeInfo.tm_hour = 0;
+    timeInfo.tm_min = 0;
+    timeInfo.tm_sec = 0;
+    tps = mktime(&timeInfo);
 }
 
 Date::Date(const Date &original) : tps(original.tps)
 {
-    cout << "Appel du constructeur de Date..." << endl;
+    cout << "Appel du constructeur de copie" << endl;
 }
 
 Date::~Date()
 {
-    cout << "Appel du destructeur de Date..." << endl;
+    cout << "Appel du destructeur de Date" << endl;
 }
 
 string Date::format(t_DateFormat format) {
