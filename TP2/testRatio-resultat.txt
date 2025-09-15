@@ -1,0 +1,150 @@
+Vous devez comparer le programme source et son affichage pour vérifier que vous comprennez bien toutes les opérations.
+
+1 : Construction de r1 avec deux paramètres entiers : le numérateur et le dénominateur
+Ratio(1,4)
+
+
+2 : Construction de r2 avec un seul paramètre entier : le numérateur
+On veut obtenir le rationnel équivalent à cet entier naturel.
+Le dénominateur du rationnel à construire est fixé à un.
+Ratio(3,1)
+
+
+3 : Construction de r3 sans aucun paramètre, ce qu'on appelle le constructeur par défaut
+Le numérateur est fixé à zéro et le dénominateur à un.
+Ratio(0,1)
+Sur le même principe, construction de r4 et r5.
+Ratio(1,4)
+Ratio(5,6)
+
+
+4: Affichage avec Ratio::ecrire() :
+un quart : r1=1/4
+trois    : r2=3/1
+zero     : r3=0/1
+
+
+5: Fonction Ratio::affecter()
+deux tiers : r2=2/3
+deux       : r3=2/1
+zero       : r1=0/1
+Affectation de 1/4 a r1.
+un quart   : r1=1/4
+
+
+6: Ratio::valeur_reelle()
+r2=2/3=0.666667 <- Remarquez que le calcul est seulement une valeur approchée arrondie : il faudrait une infinité de '6' après la virgule...
+
+
+7: Ratio::inverser().
+r3=2/1, Inverser r3 : r3=1/2
+
+
+8: Construction de r comme copie de r1 :
+Ratio(1,4)
+ r=1/4
+~Ratio(1,4)
+
+
+9: Construction de 4/5 :
+Ratio(4,5)
+Destruction de 4/5 :
+~Ratio(4,5)
+
+
+10: Accesseurs :
+r2=2/3, numérateur de r2 = 2, denominateur de r2 = 3
+
+
+11: operations constantes :
+r=2/3=0.666667
+accesseurs : r.numerateur()->2, r.denominateur()->3
+
+
+12: operateur d'envoi sur un flux :
+r1=1/4
+
+
+13: operateur d'affectation :
+La variable r1=1/4 a bien ete affectée a r2=1/4
+
+
+14: operateurs arithmétiques :
+(Il est normal d'avoir des constructions-destructions pour chaque résultat intermédiaire, et vous devez identifier quand elles se produisent !)
+r4=1/4, r5=5/6
+1/4 + 5/6 = Ratio(26,24)
+26/24
+~Ratio(26,24)
+
+1/4 - 5/6 = Ratio(-14,24)
+-14/24
+~Ratio(-14,24)
+
+1/4 * 5/6 = Ratio(5,24)
+5/24
+~Ratio(5,24)
+
+1/4 / 5/6 = Ratio(6,20)
+6/20
+~Ratio(6,20)
+
+
+15: autres operateurs d'affectation :
+r1=5/6, r2=1/4, r3=1/2
+* * * Remarquez qu'il n'y a pas ici de contruction-destruction ! * * *
+r3 = r2 += r1;
+r1=5/6, r2=26/24, r3=26/24
+
+r1=5/6, r2=1/4
+r3 = r2 -= r1;
+r1=5/6, r2=-14/24, r3=-14/24
+
+r1=5/6, r2=1/4
+r3 = r2 *= r1;
+r1=5/6, r2=5/24, r3=5/24
+
+r1=5/6, r2=1/4
+r3 = r2 /= r1;
+r1=5/6, r2=6/20, r3=6/20
+
+
+16: operateurs de comparaison :
+Ratio(10,12)
+5/6==10/12
+6/20!=10/12
+~Ratio(10,12)
+
+
+17: Opérateurs de pré et post incrémentation et décrémentation :
+Ratio(0,1)
+
+r=0/1, r5=5/6
+Ratio(5,6)
+~Ratio(5,6)
+r = r5++; 
+r=5/6, r5=11/6
+
+r=0/1, r5=11/6
+Ratio(11,6)
+~Ratio(11,6)
+r = r5--; 
+r=11/6, r5=5/6
+
+Les opérateurs suivants n'utilisent pas de variable locale, 
+et se contentent de renvoyer une référence sur le rationnel courant
+r=0/1, r5=5/6
+r = ++r5; 
+r=11/6, r5=11/6
+
+r=0/1, r5=11/6
+r = --r5; 
+r=5/6, r5=5/6
+~Ratio(5,6)
+
+
+18: Destruction de r1, r2, r3, r4 et r5 :
+~Ratio(5,6)
+~Ratio(1,4)
+~Ratio(6,20)
+~Ratio(6,20)
+~Ratio(5,6)
