@@ -35,44 +35,44 @@ int main()
    cout << endl
         << endl
         << "4: Affichage avec Ratio::ecrire() :" << endl;
-   //  cout << "un quart : r1="; r1.ecrire(); cout << endl;
-   //  cout << "trois    : r2="; r2.ecrire(); cout << endl;
-   //  cout << "zero     : r3="; r3.ecrire(); cout << endl;
+   cout << "un quart : r1="; r1.ecrire(); cout << endl;
+   cout << "trois    : r2="; r2.ecrire(); cout << endl;
+   cout << "zero     : r3="; r3.ecrire(); cout << endl;
 
    // 5: Fonction Ratio::affecter(int numerateur,int denominateur)
    //    avec valeurs par défaut identiques à celles du constructeur :
    cout << endl
         << endl
         << "5: Fonction Ratio::affecter()" << endl;
-   //   r2.affecter(2, 3); cout << "deux tiers : r2="; r2.ecrire(); cout << endl;
-   //   r3.affecter(2);    cout << "deux       : r3="; r3.ecrire(); cout << endl;
-   //   r1.affecter();     cout << "zero       : r1="; r1.ecrire(); cout << endl;
-   //   cout << "Affectation de 1/4 a r1." << endl;
-   //   r1.affecter(1,4); // Juste pour remettre une valeur non-nulle...
-   //   cout << "un quart   : r1="; r1.ecrire(); cout << endl;
+   r2.affecter(2, 3); cout << "deux tiers : r2="; r2.ecrire(); cout << endl;
+   r3.affecter(2);    cout << "deux       : r3="; r3.ecrire(); cout << endl;
+   r1.affecter();     cout << "zero       : r1="; r1.ecrire(); cout << endl;
+   cout << "Affectation de 1/4 a r1." << endl;
+   r1.affecter(1,4); // Juste pour remettre une valeur non-nulle...
+   cout << "un quart   : r1="; r1.ecrire(); cout << endl;
 
    // 6: Fonction Ratio::valeur_reelle() :
    cout << endl
         << endl
         << "6: Ratio::valeur_reelle()" << endl;
-   //   cout << "r2="; r2.ecrire(); cout << "=" << r2.valeur_reelle()
-   //        << " <- Remarquez que le calcul est seulement une valeur approchée arrondie : il faudrait une infinité de '6' après la virgule..." << endl;
+   cout << "r2="; r2.ecrire(); cout << "=" << r2.valeur_reelle()
+        << " <- Remarquez que le calcul est seulement une valeur approchée arrondie : il faudrait une infinité de '6' après la virgule..." << endl;
 
    // 7: Fonction Ratio::inverser()
    cout << endl
         << endl
         << "7: Ratio::inverser()." << endl;
-   //   cout << "r3=";                 r3.ecrire();
-   //   r3.inverser();
-   //   cout << ", Inverser r3 : r3="; r3.ecrire(); cout << endl;
+   cout << "r3=";                 r3.ecrire();
+   r3.inverser();
+   cout << ", Inverser r3 : r3="; r3.ecrire(); cout << endl;
 
    // 8: Constructeur de copie :
    cout << endl
         << endl
         << "8: Construction de r comme copie de r1 :" << endl;
    {
-      //      Ratio r(r1);
-      //      cout << " r="; r.ecrire(); cout << endl;
+           Ratio r(r1);
+           cout << " r="; r.ecrire(); cout << endl;
       // Sur cette classe particulière, même si vous ne la faites pas,
       // le constructeur par défaut fonctionnera correctement :
       // il suffit en effet de copier les données membres d'un objet dans l'autre.
@@ -90,7 +90,7 @@ int main()
         << endl
         << "9: Construction de 4/5 :" << endl;
    {
-      //      Ratio r(4,5);
+      Ratio r(4,5);
       cout << "Destruction de 4/5 :" << endl;
    }
 
@@ -99,19 +99,19 @@ int main()
    cout << endl
         << endl
         << "10: Accesseurs :" << endl;
-   //   cout << "r2="; r2.ecrire(); cout << ", numérateur de r2 = " << r2.numerateur() << ", denominateur de r2 = " << r2.denominateur() << endl;
+   cout << "r2="; r2.ecrire(); cout << ", numérateur de r2 = " << r2.numerateur() << ", denominateur de r2 = " << r2.denominateur() << endl;
 
    // 11: S'assurer que toutes les fonctions qui ne modifient pas le Rationnel sont marquées en conséquence :
    cout << endl
         << endl
         << "11: operations constantes :" << endl;
    {
-      //      const Ratio & r = r2; // Astuce pour faire que le nouveau nom r corresponde dans ce bloc à une version constante de r2.
-      //      cout << "r="; r.ecrire(); cout << "=" << r.valeur_reelle() << endl;
-      //      cout << "accesseurs : r.numerateur()->"
-      //           << r.numerateur()
-      //           << ", r.denominateur()->"
-      //           << r.denominateur() << endl;
+           const Ratio & r = r2; // Astuce pour faire que le nouveau nom r corresponde dans ce bloc à une version constante de r2.
+           cout << "r="; r.ecrire(); cout << "=" << r.valeur_reelle() << endl;
+           cout << "accesseurs : r.numerateur()->"
+                << r.numerateur()
+                << ", r.denominateur()->"
+                << r.denominateur() << endl;
    }
 
    // 12: Operateur << pour les Ratio :
@@ -119,29 +119,29 @@ int main()
    cout << endl
         << endl
         << "12: operateur d'envoi sur un flux :" << endl;
-   //   cout << "r1="<< r1 << endl;
+   cout << "r1="<< r1 << endl;
 
    // 13: Opérateur d'affectation :
    cout << endl
         << endl
         << "13: operateur d'affectation :" << endl;
-   //   r2 = r1;         // affectation à partir d'une variable nommée.
-   //   cout << "La variable r1=" << r1 << " a bien ete affectée a r2=" << r2 << endl;
+   r2 = r1;         // affectation à partir d'une variable nommée.
+   cout << "La variable r1=" << r1 << " a bien ete affectée a r2=" << r2 << endl;
 
    // 14: Opérateurs arithmétiques :
    cout << endl
         << endl
         << "14: operateurs arithmétiques :" << endl
         << "(Il est normal d'avoir des constructions-destructions pour chaque résultat intermédiaire, et vous devez identifier quand elles se produisent !)" << endl;
-   //   cout << "r4=" << r4 << ", r5=" << r5 << endl;
+   cout << "r4=" << r4 << ", r5=" << r5 << endl;
    cout << endl;
-   //   cout << r4 << " + " << r5 << " = " << r4 + r5 << endl;
+   cout << r4 << " + " << r5 << " = " << r4 + r5 << endl;
    cout << endl;
-   //   cout << r4 << " - " << r5 << " = " << r4 - r5 << endl;
+   cout << r4 << " - " << r5 << " = " << r4 - r5 << endl;
    cout << endl;
-   //   cout << r4 << " * " << r5 << " = " << r4 * r5 << endl;
+   cout << r4 << " * " << r5 << " = " << r4 * r5 << endl;
    cout << endl;
-   //   cout << r4 << " / " << r5 << " = " << r4 / r5 << endl;
+   cout << r4 << " / " << r5 << " = " << r4 / r5 << endl;
 
    // 15: Autres opérateurs d'affectation :
    cout << endl
