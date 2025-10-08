@@ -3,7 +3,8 @@ using namespace std;
 
 #include "Ratio.h"
 
-Ratio::Ratio(int num, int den) {
+Ratio::Ratio(int num, int den)
+{
     this->num = num;
     this->den = den;
     cout << "Ratio(" << this->num << "," << this->den << ")" << endl;
@@ -22,7 +23,7 @@ void Ratio::affecter(int num, int den)
 
 float Ratio::valeur_reelle() const
 {
-    return num / (float) den;
+    return num / (float)den;
 }
 
 void Ratio::inverser()
@@ -56,7 +57,8 @@ int Ratio::denominateur() const
 
 Ratio &Ratio::operator=(const Ratio &r)
 {
-    if(this != & r){
+    if (this != &r)
+    {
         num = r.numerateur();
         den = r.denominateur();
     }
@@ -66,10 +68,13 @@ Ratio &Ratio::operator=(const Ratio &r)
 Ratio Ratio::operator+(const Ratio &r) const
 {
     int num, den;
-    if (r.denominateur() == this->den) {
+    if (r.denominateur() == this->den)
+    {
         num = this->num + r.numerateur();
         den = this->den;
-    } else {
+    }
+    else
+    {
         int common_den = this->den * r.denominateur();
         int adjusted_num1 = this->num * r.denominateur();
         int adjusted_num2 = r.numerateur() * this->den;
@@ -83,10 +88,13 @@ Ratio Ratio::operator+(const Ratio &r) const
 Ratio Ratio::operator-(const Ratio &r) const
 {
     int num, den;
-    if (r.denominateur() == this->den) {
+    if (r.denominateur() == this->den)
+    {
         num = this->num - r.numerateur();
         den = this->den;
-    } else {
+    }
+    else
+    {
         int common_den = this->den * r.denominateur();
         int adjusted_num1 = this->num * r.denominateur();
         int adjusted_num2 = r.numerateur() * this->den;
@@ -100,9 +108,9 @@ Ratio Ratio::operator-(const Ratio &r) const
 Ratio Ratio::operator*(const Ratio &r) const
 {
     int num, den;
-    num = this->num*r.numerateur();
-    den = this->den*r.denominateur();
-    return Ratio(num,den);
+    num = this->num * r.numerateur();
+    den = this->den * r.denominateur();
+    return Ratio(num, den);
 }
 
 Ratio Ratio::operator/(const Ratio &r) const
@@ -111,6 +119,112 @@ Ratio Ratio::operator/(const Ratio &r) const
     int den = this->den * r.numerateur();
 
     return Ratio(num, den);
+}
+
+Ratio &Ratio::operator+=(const Ratio &r)
+{
+    int num, den;
+    if (r.denominateur() == this->den)
+    {
+        num = this->num + r.numerateur();
+        den = this->den;
+    }
+    else
+    {
+        int common_den = this->den * r.denominateur();
+        int adjusted_num1 = this->num * r.denominateur();
+        int adjusted_num2 = r.numerateur() * this->den;
+
+        num = adjusted_num1 + adjusted_num2;
+        den = common_den;
+    }
+
+    this->num = num;
+    this->den = den;
+
+    return *this;
+}
+
+Ratio &Ratio::operator-=(const Ratio &r)
+{
+    int num, den;
+    if (r.denominateur() == this->den)
+    {
+        num = this->num - r.numerateur();
+        den = this->den;
+    }
+    else
+    {
+        int common_den = this->den * r.denominateur();
+        int adjusted_num1 = this->num * r.denominateur();
+        int adjusted_num2 = r.numerateur() * this->den;
+
+        num = adjusted_num1 - adjusted_num2;
+        den = common_den;
+    }
+
+    this->num = num;
+    this->den = den;
+
+    return *this;
+}
+
+Ratio &Ratio::operator*=(const Ratio &r)
+{
+    int num, den;
+    num = this->num * r.numerateur();
+    den = this->den * r.denominateur();
+    this->num = num;
+    this->den = den;
+
+    return *this;
+}
+
+Ratio &Ratio::operator/=(const Ratio &r)
+{
+    int num = this->num * r.denominateur();
+    int den = this->den * r.numerateur();
+
+    this->num = num;
+    this->den = den;
+
+    return *this;
+}
+
+bool Ratio::operator==(const Ratio &r) const
+{
+    bool numEqual = this->num*r.denominateur() == r.numerateur()*this->den;
+    return numEqual;
+}
+
+bool Ratio::operator!=(const Ratio &r) const
+{   
+    bool numEqual = this->num*r.denominateur() == r.numerateur()*this->den;
+    return !numEqual;
+}
+
+Ratio &Ratio::operator++()
+{
+    this->num = this->num + this->den;
+    return *this;
+}
+
+Ratio Ratio::operator++(int)
+{
+    this->num += this->den;
+    return Ratio(this->num, this->den);
+}
+
+Ratio &Ratio::operator--()
+{
+    this->num = this->num - this->den;
+    return *this;
+}
+
+Ratio Ratio::operator--(int)
+{
+    this->num -= this->den;
+    return Ratio(this->num, this->den);
 }
 
 ostream &operator<<(ostream &os, const Ratio &r)
@@ -123,11 +237,15 @@ istream &operator>>(istream &is, Ratio &r)
 {
     char c;
     is >> r.num;
-    if((c=is.get()) =='/'){
+    if ((c = is.get()) == '/')
+    {
         is >> r.den;
-    }else{
+    }
+    else
+    {
         is.putback(c);
-        if (c != '\n') is.clear(ios::badbit);
+        if (c != '\n')
+            is.clear(ios::badbit);
     }
     return is;
 }
