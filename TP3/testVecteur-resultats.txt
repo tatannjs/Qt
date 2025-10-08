@@ -1,0 +1,66 @@
+1 - Vecteur de dimension quelconque
+V0 = <4:0,0,0,0>
+
+2 - Vecteur vide
+V1 = <0:>
+
+3 - Vecteur construit à partir d'une dimension et d'un tableau
+V2 = <5:1,2,3,4,5>
+V3 = <5:2,3,4,5,6>
+
+4 - Constructeur de recopie (v4 à partir de v2)
+V4 = <5:1,2,3,4,5>
+
+6 - Taille d'un vecteur
+V3 : 5
+
+8 - Affectation v0 = v2
+V0 = <5:1,2,3,4,5>
+
+9 - Indexation v0[0]
+V0[0] = 1
+9 - Indexation V0[0] = V0[3]
+v0[0] = 4
+
+10 - Norme de V0
+V0 = <5:4,2,3,4,5>
+Norme de V0 = 8.4
+
+11 - Norme de V0 (après normalisation)
+V0 = <5:0.48,0.24,0.36,0.48,0.6>
+Norme de V0 = 1
+
+12 - Multiplication d'un vecteur par un scalaire
+V2 * 2 = <5:2,4,6,8,10>
+2 * V2 = <5:2,4,6,8,10>
+
+13 - Opérateur - unaire
+-V1 = <5:-1,-2,-3,-4,-5>
+
+14 - Addition et soustraction de 2 vecteurs
+V2 = <5:1,2,3,4,5>
+V3 = <5:2,3,4,5,6>
+V2 + V3 = <5:3,5,7,9,11>
+V3 - V2 = <5:1,1,1,1,1>
+
+15 - Application d'une fonction à 1 argument
+V4 = <5:1,2,3,4,5>
+V4.appliquer1(f1) = <5:0.5,1,1.5,2,2.5>
+
+16 - Produit scalaire de 2 vecteurs
+V2 * V3 = 70
+
+17 - Opérateur de flux en entrée
+Entrez un vecteur : 
+V1 = <5:1,-1,0,1,-1>
+
+18 - Produit vectoriel de 2 vecteurs
+Entrez un vecteur V1 : 
+Entrez un vecteur V2 : 
+V1 = <3:1,-1,2>
+V2 = <3:-1,1,2>
+V1 ^ V2 = <3:1,-1,2> ^ <3:-1,1,2> = <3:-4,-4,0>
+
+19 - Application d'une fonction à 2 arguments
+appliquer2(f2, V1, V2) = <3:0,0,2>
+
