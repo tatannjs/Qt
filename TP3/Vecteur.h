@@ -27,17 +27,16 @@ public:
    long double operator[](unsigned int i) const;
    long double &operator[](unsigned int i);
    friend ostream &operator<<(ostream &os, const Vecteur &v);
-   //      friend istream & operator >> (istream & is, Vecteur & v);
+   friend istream &operator>>(istream &is, Vecteur &v);
    friend Vecteur operator-(const Vecteur &v);
    friend Vecteur operator*(const Vecteur &v, const long double x);
    friend Vecteur operator*(const long double x, const Vecteur &v);
-   //      friend Vecteur operator + (const Vecteur & v1, const Vecteur & v2);
-   //      friend Vecteur operator - (const Vecteur & v1, const Vecteur & v2);
-   //      friend long double operator * (const Vecteur & v1, const Vecteur & v2);
-   //      friend Vecteur operator ^ (const Vecteur & v1, const Vecteur & v2);
+   friend Vecteur operator+(const Vecteur &v1, const Vecteur &v2);
+   friend Vecteur operator-(const Vecteur &v1, const Vecteur &v2);
+   friend long double operator*(const Vecteur &v1, const Vecteur &v2);
+   friend Vecteur operator^(const Vecteur &v1, const Vecteur &v2);
    long double norme();
    void normalise();
-   //      Vecteur appliquer1(long double (*) (long double)) const;
-   //      friend Vecteur appliquer2(long double (*) (long double, long double),
-   //                                const Vecteur &, const Vecteur &) throw(Erreur);
+   Vecteur appliquer1(long double (*)(long double)) const;
+   friend Vecteur appliquer2(long double (*)(long double, long double), const Vecteur &, const Vecteur &);
 };

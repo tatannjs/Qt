@@ -90,82 +90,86 @@ int main()
 
    // 13 - Opérateur - unaire
    cout << "13 - Opérateur - unaire" << endl;
-   cout << "-V1 = " << -v2 << endl << endl;
+   cout << "-V1 = " << -v2 << endl
+        << endl;
 
    // 14 - Addition et soustraction de 2 vecteurs
    cout << "14 - Addition et soustraction de 2 vecteurs" << endl;
-   /*
-      cout << "V2 = " << v2 << endl;
-      cout << "V3 = " << v3 << endl;
-      cout << "V2 + V3 = ";
-      try {
-          cout << (v2 + v3) << endl;
-      }
-      catch (Erreur & e) {
-         cout << e.what() << endl;
-      }
-      cout << "V3 - V2 = ";
-      try {
-          cout << (v3 - v2) << endl << endl;
-      }
-      catch (Erreur & e) {
-         cout << e.what() << endl;
-      }
-   */
+   cout << "V2 = " << v2 << endl;
+   cout << "V3 = " << v3 << endl;
+   cout << "V2 + V3 = ";
+   try
+   {
+      cout << (v2 + v3) << endl;
+   }
+   catch (Erreur &e)
+   {
+      cout << e.what() << endl;
+   }
+   cout << "V3 - V2 = ";
+   try
+   {
+      cout << (v3 - v2) << endl
+           << endl;
+   }
+   catch (Erreur &e)
+   {
+      cout << e.what() << endl;
+   }
 
    // 15 - Application d'une fonction à 1 argument
    cout << "15 - Application d'une fonction à 1 argument" << endl;
-   /*
-      cout << "V4 = " << v4 << endl;
-      cout << "V4.appliquer1(f1) = " << v4.appliquer1(f1) << endl << endl;
-   */
+   cout << "V4 = " << v4 << endl;
+   cout << "V4.appliquer1(f1) = " << v4.appliquer1(f1) << endl
+        << endl;
 
    // 16 - Produit scalaire de 2 vecteurs
    cout << "16 - Produit scalaire de 2 vecteurs" << endl;
-   /*
-      cout << "V2 * V3 = ";
-      try {
-          cout << (v2 * v3) << endl  << endl;
-      }
-      catch (Erreur & e) {
-         cout << e.what() << endl;
-      }
-   */
+   cout << "V2 * V3 = ";
+   try
+   {
+      cout << (v2 * v3) << endl
+           << endl;
+   }
+   catch (Erreur &e)
+   {
+      cout << e.what() << endl;
+   }
 
    // 17 - Opérateur de flux en entrée
    cout << "17 - Opérateur de flux en entrée" << endl;
-   /*
-      cout << "Entrez un vecteur : " << endl;
-      cin >> v1;
-      if (! cin) {
-         cout << "ERREUR de lecture\n";
-         exit (-1);
-      }
-      cout << "V1 = " << v1 << endl << endl;
-   */
+   cout << "Entrez un vecteur : " << endl;
+   cin >> v1;
+   if (!cin)
+   {
+      cout << "ERREUR de lecture\n";
+      exit(-1);
+   }
+   cout << "V1 = " << v1 << endl
+        << endl;
 
    // 18 - Produit vectoriel de 2 vecteurs
    cout << "18 - Produit vectoriel de 2 vecteurs" << endl;
-   /*
-      cout << "Entrez un vecteur V1 : " << endl;
-      cin >> v1;
-      cout << "Entrez un vecteur V2 : " << endl;
-      cin >> v2;
-      cout << "V1 = " << v1 << endl;
-      cout << "V2 = " << v2 << endl;
-      cout << "V1 ^ V2 = " << v1 << " ^ " << v2 << " = " << (v1 ^ v2) << endl << endl;
-   */
+   cout << "Entrez un vecteur V1 : " << endl;
+   cin >> v1;
+   cout << "Entrez un vecteur V2 : " << endl;
+   cin >> v2;
+   cout << "V1 = " << v1 << endl;
+   cout << "V2 = " << v2 << endl;
+   cout << "V1 ^ V2 = " << v1 << " ^ " << v2 << " = " << (v1 ^ v2) << endl
+        << endl;
 
    // 19 - Application d'une fonction à 2 argument
    cout << "19 - Application d'une fonction à 2 arguments" << endl;
-   /*
-      try {
-         cout << "appliquer2(f2, V1, V2) = " << appliquer2(f2, v1, v2) << endl << endl;
-      }
-      catch(Erreur & e) {
-         cout << e.what() << endl;
-      }
-   */
+   try
+   {
+      cout << "appliquer2(f2, V1, V2) = " << appliquer2(f2, v1, v2) << endl
+           << endl;
+   }
+   catch (Erreur &e)
+   {
+      cout << e.what() << endl;
+   }
 
    return 0;
 }
